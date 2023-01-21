@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 
 abstract class BaseViewModel : ViewModel() {
 
-    abstract fun stop()
-    abstract fun start()
+    fun stop(){}
+    fun start(){}
 
 }
