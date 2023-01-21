@@ -9,26 +9,28 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ViewModelComponent
 import dagger.hilt.android.scopes.ViewModelScoped
+import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Converter
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import javax.inject.Singleton
 
 @Module
-@InstallIn(ViewModelComponent::class)
+@InstallIn(SingletonComponent::class)
 object NetworkModule {
 
-    @ViewModelScoped
+    @Singleton
     @Provides
     fun provideBaseURL() = BASE_URL
 
-    @ViewModelScoped
+    @Singleton
     @Provides
     fun provideLoggingInterceptor() =
         HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
 
-    @ViewModelScoped
+    @Singleton
     @Provides
     fun provideHttpClient(loggingInterceptor: HttpLoggingInterceptor) =
         OkHttpClient.Builder().addInterceptor(loggingInterceptor)
@@ -38,25 +40,20 @@ object NetworkModule {
             .readTimeout(TIMEOUT , TIME_UNIT)
             .build()
 
-    @ViewModelScoped
-    @Provides
-    fun provideConverterFactory() = GsonConverterFactory.create()
+//    @Singleton
+//    @Provides
+//    fun provideConverterFactory() = GsonConverterFactory.create()
 
-    @ViewModelScoped
+    @Singleton
     @Provides
     fun provideRetrofit(
         baseUrl: String,
-        converter: Converter.Factory,
         okkHttpClient: OkHttpClient
     ) = Retrofit.Builder()
         .baseUrl(baseUrl)
-        .addConverterFactory(converter)
+        .addConverterFactory(GsonConverterFactory.create())
         .client(okkHttpClient)
         .build()
 
-    @ViewModelScoped
-    @Provides
-    fun provideWeatherService(retrofit: Retrofit) =
-        retrofit.create(WeatherService::class.java)
 
 }
