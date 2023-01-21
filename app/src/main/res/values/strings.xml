@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">WeatherPhotoCreator</string>
+    <string name="permission_dialog_body">You must enable all required permission to continue using thi app</string>
+    <string name="permission_dialog_title">Permission Required</string>
+    <string name="permission_dialog_positive">Settings</string>
+    <string name="permission_dialog_negative">Quit App</string>
+
 </resources>

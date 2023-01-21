@@ -1,10 +1,9 @@
 package com.weather.photoCreator.di
 
-import androidx.lifecycle.ViewModel
 import com.weather.photoCreator.repo.remote.services.WeatherService
-import com.weather.photoCreator.utils.AppHelper.BASE_URL
-import com.weather.photoCreator.utils.AppHelper.TIMEOUT
-import com.weather.photoCreator.utils.AppHelper.TIME_UNIT
+import com.weather.photoCreator.utils.AppConstants.BASE_URL
+import com.weather.photoCreator.utils.AppConstants.TIMEOUT
+import com.weather.photoCreator.utils.AppConstants.TIME_UNIT
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -15,8 +14,6 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Converter
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.create
-import javax.inject.Singleton
 
 @Module
 @InstallIn(ViewModelComponent::class)
