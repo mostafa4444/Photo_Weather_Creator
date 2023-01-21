@@ -81,6 +81,8 @@ dependencies {
     // Add Location Service GMS
     implementation(GmsServices.locationService)
 
+    implementation("com.github.dhaval2404:imagepicker:2.1")
+
 
 
     testImplementation("junit:junit:4.13.2")

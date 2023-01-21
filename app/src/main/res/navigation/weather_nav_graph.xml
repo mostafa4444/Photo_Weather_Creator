@@ -7,5 +7,13 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.weather.photoCreator.ui.weather.fragments.HomeFragment"
-        android:label="HomeFragment" />
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_selectImageFragment"
+            app:destination="@id/selectImageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/selectImageFragment"
+        android:name="com.weather.photoCreator.ui.weather.fragments.SelectImageFragment"
+        android:label="SelectImageFragment" />
 </navigation>

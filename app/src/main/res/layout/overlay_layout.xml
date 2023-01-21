@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/container"
+    android:padding="10dp"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintBottom_toTopOf="@id/saveBtn"
+    android:background="#402E2E2E"
+    android:layout_width="match_parent"
+    android:layout_height="140dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:visibility="visible"
+    android:visibility="gone"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:id="@+id/temp_lr"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_temp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:paddingStart="10dp"
+            android:text="Temp"
+            android:textColor="#ffffff"
+
+            android:textSize="20sp" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:paddingTop="10dp"
+        android:id="@+id/country_lr"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/temp_lr">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_baseline_my_location_24" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:paddingStart="10dp"
+            android:text="Location"
+            android:textColor="#ffffff"
+
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:paddingTop="10dp"
+        android:id="@+id/date_lr"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/country_lr">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_baseline_calendar_today_24" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:text="Date"
+            android:textColor="#ffffff"
+
+            android:textSize="20sp" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
