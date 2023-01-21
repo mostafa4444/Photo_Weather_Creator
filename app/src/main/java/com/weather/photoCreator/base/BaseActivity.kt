@@ -30,24 +30,10 @@ abstract class BaseActivity<VM: BaseViewModel , VB: ViewDataBinding> : AppCompat
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         baseViewBinding = DataBindingUtil.setContentView(this, getContentView())
-        initializeViewModel()
         initView()
+        initializeViewModel()
         baseViewModel?.start()
         subscribeObservers()
-    }
-
-    fun showPositiveDialog(title: String , msg: String , btnTitle: String , positiveBlock: (() -> Unit)? ){
-        DialogBuilder.showDialog(this , DIALOG_TYPE.POSITIVE_ONLY , title  , btnTitle, null,
-            msg , null , positiveBlock)
-    }
-
-    fun showNegativeDialog(title: String , msg: String , btnTitle: String , negativeBlock: (() -> Unit)?){
-        DialogBuilder.showDialog(this , DIALOG_TYPE.NEGATIVE_ONLY , title  , btnTitle, null,
-            msg , null , negativeBlock)
-    }
-    fun showDialog(title: String , msg: String , posTitle: String , negTitle: String , positiveBlock: (() -> Unit)? , negativeBlock: (() -> Unit)?){
-        DialogBuilder.showDialog(this , DIALOG_TYPE.BOTH , title , posTitle , negTitle,
-            msg , positiveBlock , negativeBlock)
     }
 
 

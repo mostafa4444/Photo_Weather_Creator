@@ -16,7 +16,7 @@ abstract class BaseFragment<VM: BaseViewModel , VB: ViewDataBinding> : Fragment(
     protected lateinit var baseViewBinding: VB
     protected abstract fun initView()
     protected abstract fun getContentView(): Int
-    protected open fun initializeViewModel(){}
+    protected abstract fun initializeViewModel()
     protected open fun subscribeObservers(){}
     override fun onCreateView(
         inflater: LayoutInflater,

@@ -6,6 +6,20 @@ import androidx.appcompat.app.AppCompatActivity
 
 object DialogBuilder {
 
+    fun AppCompatActivity.showPositiveDialog(title: String , msg: String , btnTitle: String , positiveBlock: (() -> Unit)? ){
+        DialogBuilder.showDialog(this, DIALOG_TYPE.POSITIVE_ONLY , title  , btnTitle, null,
+            msg , null , positiveBlock)
+    }
+
+    fun AppCompatActivity.showNegativeDialog(title: String , msg: String , btnTitle: String , negativeBlock: (() -> Unit)?){
+        DialogBuilder.showDialog(this , DIALOG_TYPE.NEGATIVE_ONLY , title  , btnTitle, null,
+            msg , null , negativeBlock)
+    }
+    fun AppCompatActivity.showDialog(title: String , msg: String , posTitle: String , negTitle: String , positiveBlock: (() -> Unit)? , negativeBlock: (() -> Unit)?){
+        DialogBuilder.showDialog(this , DIALOG_TYPE.BOTH , title , posTitle , negTitle,
+            msg , positiveBlock , negativeBlock)
+    }
+
     fun showDialog(
         activity: AppCompatActivity,
         type: DIALOG_TYPE,

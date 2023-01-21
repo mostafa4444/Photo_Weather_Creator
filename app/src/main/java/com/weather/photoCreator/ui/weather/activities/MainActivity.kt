@@ -13,6 +13,8 @@ import com.weather.photoCreator.base.BaseViewModel
 import com.weather.photoCreator.databinding.ActivityMainBinding
 import com.weather.photoCreator.utils.IntentHelper.openSettingIntent
 import dagger.hilt.android.AndroidEntryPoint
+import com.weather.photoCreator.utils.DialogBuilder.showDialog
+
 
 
 @AndroidEntryPoint
@@ -49,7 +51,7 @@ class MainActivity : BaseActivity<BaseViewModel , ActivityMainBinding>() {
     private val requestPermissionLauncher: ActivityResultLauncher<Array<String>> =
         registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) { isGranted ->
             if (isGranted.containsValue(false)) {
-                showDialog(
+                this.showDialog(
                     getString(R.string.permission_dialog_title),
                     getString(R.string.permission_dialog_body),
                     getString(R.string.permission_dialog_positive),

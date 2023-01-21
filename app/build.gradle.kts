@@ -78,6 +78,9 @@ dependencies {
     implementation(Retrofit.okHTTP)
     implementation(Retrofit.okHTTPInterceptor)
 
+    // Add Location Service GMS
+    implementation(GmsServices.locationService)
+
 
 
     testImplementation("junit:junit:4.13.2")
