@@ -8,4 +8,5 @@ object AppConstants {
     val TIME_UNIT = TimeUnit.SECONDS
     const val TIMEOUT = 60L
     const val WEATHER_DATABASE_NAME = "weather_db"
+    const val CREATED_FILE_PATH = "WeatherPhotoCreator"
 }

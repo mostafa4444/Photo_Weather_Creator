@@ -66,11 +66,6 @@ dependencies {
     implementation(Navigation.navFragment)
     implementation(Navigation.navUI)
 
-    // Room Integration
-    implementation(Room.runtime)
-    kapt(Room.kapt)
-    implementation(Room.ktx)
-
     // Retrofit & OKHTTP Integration
     implementation(Retrofit.retrofitCore)
     implementation(Retrofit.retrofitConverter)

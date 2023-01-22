@@ -6,14 +6,25 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.weather.photoCreator.ui.weather.fragments.HomeFragment"
+        android:name="com.weather.photoCreator.ui.weather.fragments.home.HomeFragment"
         android:label="HomeFragment" >
         <action
             android:id="@+id/action_homeFragment_to_selectImageFragment"
             app:destination="@id/selectImageFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_imageInfoFragment"
+            app:destination="@id/imageInfoFragment" />
     </fragment>
     <fragment
         android:id="@+id/selectImageFragment"
-        android:name="com.weather.photoCreator.ui.weather.fragments.SelectImageFragment"
+        android:name="com.weather.photoCreator.ui.weather.fragments.selectImage.SelectImageFragment"
         android:label="SelectImageFragment" />
+    <fragment
+        android:id="@+id/imageInfoFragment"
+        android:name="com.weather.photoCreator.ui.weather.fragments.viewImages.ImageInfoFragment"
+        android:label="ImageInfoFragment" >
+        <argument
+            android:name="imageUri"
+            app:argType="android.net.Uri" />
+    </fragment>
 </navigation>

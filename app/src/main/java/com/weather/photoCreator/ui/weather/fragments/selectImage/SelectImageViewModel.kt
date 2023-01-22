@@ -1,5 +1,6 @@
-package com.weather.photoCreator.ui.weather.fragments.viewModels
+package com.weather.photoCreator.ui.weather.fragments.selectImage
 
+import android.net.Uri
 import androidx.lifecycle.viewModelScope
 import com.weather.photoCreator.base.BaseViewModel
 import com.weather.photoCreator.models.response.WeatherResponse

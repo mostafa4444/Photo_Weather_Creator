@@ -4,6 +4,8 @@ import android.content.Intent
 import android.net.Uri
 import android.provider.Settings
 import androidx.appcompat.app.AppCompatActivity
+import java.text.SimpleDateFormat
+import java.util.*
 
 object IntentHelper {
 
@@ -12,5 +14,16 @@ object IntentHelper {
         val uri: Uri = Uri.fromParts("package", packageName, null)
         intent.data = uri
         this.startActivity(intent)
+    }
+
+    fun getDateFormatted(date: Long): String{
+        try {
+            val calender = Calendar.getInstance()
+            calender.time.time = date
+            val formatter = SimpleDateFormat("HH:mm dd MM" , Locale.getDefault())
+            return formatter.format(calender.time)
+        }catch (e: Exception){
+            return  ""
+        }
     }
 }

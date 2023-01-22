@@ -16,7 +16,8 @@ abstract class BaseFragment<VM: BaseViewModel , VB: ViewDataBinding> : Fragment(
     protected lateinit var baseViewBinding: VB
     protected abstract fun initView()
     protected abstract fun getContentView(): Int
-    protected abstract fun initializeViewModel()
+    protected open fun initializeViewModel(){}
+    protected abstract fun handleMenu()
     protected open fun subscribeObservers(){}
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -35,6 +36,7 @@ abstract class BaseFragment<VM: BaseViewModel , VB: ViewDataBinding> : Fragment(
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        handleMenu()
         activity?.window?.clearFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS)
         initView()
         subscribeObservers()
